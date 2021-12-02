@@ -1,20 +1,14 @@
 const fs = require('fs')
-
-var array = fs.readFileSync('./input.txt').toString().split("\n");
-for (var i = 0; i < array.length; i++) {
-  array[i] = array[i].replace('\r', '');
+var array = fs.readFileSync('./input.txt').toString().replace('\r', '').split`\n`;
+var up = forward = 0;
+p = parseInt;
+for (var j=array.length; j--; ) {
+  var array2 = array[j].toString().split` `;
+  if (array2[0] == 'forward')
+    {forward = forward + p(array2[1]);}
+  if (array2[0] == 'up')
+    {up = up - p(array2[1]);}
+  if (array2[0] == 'down')
+    {up = up + p(array2[1])}
 }
-array.pop()
-
-up = 0;
-across = 0;
-
-for (var j = 0; j < array.length; j++) {
-  if (array[j].toString().split(" ")[0] == 'forward')
-    {across = across + parseInt(array[j].toString().split(" ")[1]);}
-  if (array[j].toString().split(" ")[0] == 'up')
-    {up = up - parseInt(array[j].toString().split(" ")[1]);}
-  if (array[j].toString().split(" ")[0] == 'down')
-    {up = up + parseInt(array[j].toString().split(" ")[1])}
-}
-console.log(up * across)
+console.log(up * forward)
