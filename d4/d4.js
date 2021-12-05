@@ -60,7 +60,7 @@ for (i = 1; i < a1.length; i++) {
   for (j=0; j < board.length; j++) {
     board[j] = board[j].split(' ').filter(String);
   }
-  console.log(board);
+  //console.log(board);
   mark(board, callings)
   }
 
@@ -72,7 +72,7 @@ for (n = 0; n < w.length; n++) {
 // console.log(mark(w, callings));
 M = mark(w, callings);
 var score = 0;
-for (s = 0; s < w.length-1; s++) {
+for (s = 0; s < w.length; s++) {
   for (t = 0; t < w[0].length; t++) {
     // console.log(M[s][t])
     if (M[s][t] != 'X') {
@@ -80,6 +80,7 @@ for (s = 0; s < w.length-1; s++) {
     }
   }
 }
-console.log(a1[scores.indexOf(Math.min(...scores)) + 1].split('\r\n').filter(String))
+//console.log(a1[scores.indexOf(Math.min(...scores)) + 1].split('\r\n').filter(String))
 console.log(w)
+console.log(score, callings[Math.min(...scores) - 1])
 console.log(score * callings[Math.min(...scores) - 1])
