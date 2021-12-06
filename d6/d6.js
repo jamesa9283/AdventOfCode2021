@@ -5,17 +5,17 @@ var T = 80;
 
 
 pI = parseInt;
+
 for (i = 0; i < T; i++) {
-  for (j = 0; j < fish.length; j++) {
-    console.log(fish[j]);
-    if (pI(fish[j]) == 0) {
-      fish[j] = 6;
-      fish.push(9);
-      console.log('added new fish');
-    } else {
-      fish[j] = pI(fish[j]) - 1;
-      console.log('else');
-    }
+  if (fish.includes(0)) {
+    while(fish.indexOf(0) != -1) { fish.splice(fish.indexOf(0), 1, 7); fish.push(9);}
   }
+  var fish = fish.map( function(value) {
+      return value - 1;
+  } );
+  console.log('Day: ' + i)
 }
+
 console.log(fish.length)
+
+
