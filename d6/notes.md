@@ -24,7 +24,9 @@ $$ L = \begin{matrix} F_0 & F_1 & F_2 \\ S_0 & 0 & 0 \\ 0 & S_1 & 0 \end{matrix}
 NB! There are only two survival rates as we consider the transition between survival rates. This Leslie matrix, can now be used to talk about the dynamics over time by putting this matrix into a different equation:
 $$ x_{n+1} = Lx_n $$
 
-## Solving the system
+### Solving the system
 It now suffices to solve this system and we can do this by nicely considering the first few terms then
 $$ x_1 = Lx_0 \qquad x_2 = L^2x_0 \qquad x_3 = L^3x_0 \qquad \dots \qquad x_n = L^nx_0 $$
-and so we see that we can solve this by just finding the $n^{th}$ power of a matrix and then multiplying by some initial condition.
+and so we see that we can solve this by just finding the $n^{th}$ power of a matrix and then multiplying by some initial condition. Hence,
+$$ x_n = L^nx_0 $$
+
