@@ -19,7 +19,7 @@ for (i=0; i < a1.length; i++) {
     pts.push((line[0].split(',')), (line[1].split(',')));
   }
 }
-console.log(line)
+console.log(lines)
 // console.log(pts.flat())
 // console.log(Math.max(...pts.flat()))
 
